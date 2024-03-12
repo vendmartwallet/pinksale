@@ -7,7 +7,7 @@ const HeadSuite = () => {
       <>
         <div className=" px-5">
           <div>
-            <h1 className=" text-center text-[34px] text-[#222222] leading-[50px] font-semibold">
+            <h1 className=" text-center text-[34px] text-[#222222] leading-[40px] font-semibold">
               {props.header}
             </h1>
             <p className=" text-center font-normal text-[#222222] gap-5 text-[20px] pt-4">

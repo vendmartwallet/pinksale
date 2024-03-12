@@ -1,7 +1,6 @@
 import React from "react";
 import Doublebtn from "../../components/doublebtn/Doublebtn";
 
-
 const HeadLinesprops = () => {
   const HeadLine = (props) => {
     return (
@@ -11,14 +10,14 @@ const HeadLinesprops = () => {
             <h1 className=" text-center text-[38px] text-[#222222] leading-[50px] font-semibold">
               {props.header}
             </h1>
-            <p className=" text-center font-normal text-[#222222] gap-5 text-[21px] pt-4">
+            <p className=" text-center font-normal text-[#222222] gap-5 text-[19px] pt-4">
               {props.paragraph}
             </p>
           </div>
 
-          <div className=" grid grid-cols-1 gap-2">
-          <Doublebtn title="Create Now"/>
-          <Doublebtn title="Learn more"/>
+          <div className=" grid grid-cols-1 gap-2 mt-5">
+            <Doublebtn title="Create Now" />
+            <Doublebtn title="Learn more" />
           </div>
         </div>
       </>
