@@ -4,6 +4,7 @@ import ButtonPrimaryprops from "../../components/buttonPrimary/ButtonPrimaryprop
 import ButtonSecprops from "../../components/buttonSec/ButtonSecprops";
 import Logo from "../../assets/pinkswaplogo.png";
 import Tradeview from "../../assets/tradeview.svg";
+import Binance from "../../assets/binancelogo.png";
 
 const Navbar = () => {
   return (
@@ -19,9 +20,14 @@ const Navbar = () => {
         </div>
         <div className=" flex gap-3 items-center">
           <ButtonSecprops title="dexview.com" img={Tradeview} />
-          <div className="hidden lg:block">
+          <div className=" hidden lg:block">
             {" "}
             <ButtonSecprops title="BSC MAINNET" img={Tradeview} />
+          </div>
+
+          <div className=" h-10 w-10 rounded-full bg-black p-2
+          ">
+            <img src={Binance} alt="" />
           </div>
 
           <ButtonPrimaryprops title="Connect" />
