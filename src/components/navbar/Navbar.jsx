@@ -18,7 +18,7 @@ const Navbar = () => {
             <img src={Logo} alt="" width="37px" />
           </div>
         </div>
-        <div className=" flex gap-2 items-center">
+        <div className=" flex gap-1 items-center">
           <ButtonSecprops title="dexview.com" img={Tradeview} />
           <div className=" hidden lg:block">
             {" "}
