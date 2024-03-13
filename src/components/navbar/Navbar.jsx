@@ -53,8 +53,9 @@ const Navbar = () => {
             <ButtonPrimaryprops title="Connect" />
           </div>
         </div>
+      </div>
 
-        {showModal && (
+      {showModal && (
           <div className="fixed border-2 px-3 top-0 backdrop-blur items-center flex flex-col justify-center w-full h-full right-0 ">
             <div className="px-3 w-full h-fit py-3 flex flex-col justify-center bg-white rounded-lg border ">
               <div className=" flex items-center justify-between border-b py-2">
@@ -92,7 +93,6 @@ const Navbar = () => {
             </div>
           </div>
         )}
-      </div>
     </>
   );
 };
