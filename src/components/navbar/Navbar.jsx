@@ -35,7 +35,7 @@ const Navbar = () => {
           <div>
             <IoMenuOutline size="30" />
           </div>
-          <div className="logo">
+          <div className="logo pr-1">
             <img src={Logo} alt="" width="37px" />
           </div>
         </div>
