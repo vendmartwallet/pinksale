@@ -1,4 +1,4 @@
-import { React, useState } from "react";
+import { Fragment, React, useState } from "react";
 import { IoMenuOutline, IoClose } from "react-icons/io5";
 import ButtonPrimaryprops from "../../components/buttonPrimary/ButtonPrimaryprops";
 import ButtonSecprops from "../../components/buttonSec/ButtonSecprops";
@@ -19,13 +19,22 @@ import Rabby from "../../assets/rabby.svg";
 
 const Navbar = () => {
   const [showModal, setShowModal] = useState(false);
+  const [selectedWallet, setSelectedWallet] = useState(false);
 
+  // To sellect a wallet
   const toggleModal = () => {
     setShowModal(!showModal);
   };
 
+  // For selected wallet
+  const toggleSelected = () => {
+    setSelectedWallet(!selectedWallet);
+    // console.log("hiiii");
+  };
+
   const closeModal = () => {
     setShowModal(false);
+    setSelectedWallet(false);
   };
 
   return (
@@ -55,44 +64,107 @@ const Navbar = () => {
         </div>
       </div>
 
-      {showModal && (
-          <div className="fixed border-2 px-3 top-0 backdrop-blur items-center flex flex-col justify-center w-full h-full right-0 ">
-            <div className="px-3 w-full h-fit py-3 flex flex-col justify-center bg-white rounded-lg border ">
-              <div className=" flex items-center justify-between border-b py-2">
-                <div>
-                  <h1 className=" text-md">Connect to a wallet</h1>
-                </div>
+      {/* {selectedWallet && (
+        <div className="fixed border-2 px-3 top-0 backdrop-blur items-center flex flex-col justify-center w-full h-full right-0 ">
+          <div className="px-3 w-full h-fit py-3 flex flex-col justify-center bg-red-400 rounded-lg border ">
+            <div className=" flex items-center justify-between border-b py-2">
+              <div>
+                <h1 className=" text-md">Connect to a wallet</h1>
+              </div>
+              <p>hello</p>
+              <button onClick={closeSelected}>
+                <IoClose size="24" />
+              </button>
+            </div>
 
-                <button onClick={closeModal}>
-                  <IoClose size="24" />
-                </button>
+            <div className=" flex flex-col gap-2 mt-4"></div>
+          </div>
+        </div>
+      )} */}
+
+      {showModal && (
+        <div className="fixed border-2 px-3 top-0 backdrop-blur items-center flex flex-col justify-center w-full h-full right-0 ">
+          <div className="px-3 w-full h-fit py-3 flex flex-col justify-center bg-white rounded-lg border ">
+            <div className=" flex items-center justify-between border-b py-2">
+              <div>
+                <h1 className=" text-md">Connect to a wallet</h1>
               </div>
 
-              <div className=" flex flex-col gap-2 mt-4">
-                <div className=" flex items-center gap-2">
+              <button onClick={closeModal}>
+                <IoClose size="24" />
+              </button>
+            </div>
+
+            <div className=" flex flex-col gap-2 mt-4">
+              <div className=" flex items-center gap-2">
+                <div className=" w-[50%]" onClick={toggleSelected}>
                   <Wallets img={MetaMask} walletName="Metamask" />
+                </div>
+
+                <div className=" w-[50%]" onClick={toggleSelected}>
                   <Wallets img={Rabby} walletName="Rabby Wallet" />
                 </div>
-                <div className=" flex items-center gap-2">
-                  <Wallets img={Coinbase} walletName="Coinbase Wallet" />
-                  <Wallets img={Walletconnect} walletName="Walletconnect" />
+              </div>
+              <div className=" flex items-center gap-2">
+                <div className=" w-[50%]" onClick={toggleSelected}>
+                  <Wallets img={Coinbase} walletName="Metamask" />
                 </div>
-                <div className=" flex items-center gap-2">
-                  <Wallets img={Trust} walletName="TrustWallet" />
-                  <Wallets img={Safepal} walletName="Safepal" />
+
+                <div className=" w-[50%]" onClick={toggleSelected}>
+                  <Wallets img={Walletconnect} walletName="Rabby Wallet" />
                 </div>
-                <div className=" flex items-center gap-2">
-                  <Wallets img={Math} walletName="Math Wallet" />
-                  <Wallets img={TokenP} walletName="TokenPocket" />
+              </div>
+              <div className=" flex items-center gap-2">
+                <div className=" w-[50%]" onClick={toggleSelected}>
+                  <Wallets img={Trust} walletName="Metamask" />
                 </div>
-                <div className=" flex items-center gap-2">
-                  <Wallets img={Bitkeep} walletName="Bitkeep" />
-                  <Wallets img={Fantom} walletName="Fantom" />
+
+                <div className=" w-[50%]" onClick={toggleSelected}>
+                  <Wallets img={Safepal} walletName="Rabby Wallet" />
+                </div>
+              </div>
+              <div className=" flex items-center gap-2">
+                <div className=" w-[50%]" onClick={toggleSelected}>
+                  <Wallets img={Math} walletName="Metamask" />
+                </div>
+
+                <div className=" w-[50%]" onClick={toggleSelected}>
+                  <Wallets img={TokenP} walletName="Rabby Wallet" />
+                </div>
+              </div>
+              <div className=" flex items-center gap-2">
+                <div className=" w-[50%]" onClick={toggleSelected}>
+                  <Wallets img={Bitkeep} walletName="Metamask" />
+                </div>
+
+                <div className=" w-[50%]" onClick={toggleSelected}>
+                  <Wallets img={Fantom} walletName="Rabby Wallet" />
                 </div>
               </div>
             </div>
           </div>
-        )}
+        </div>
+      )}
+
+      {selectedWallet && (
+        <div className="fixed border-2 px-3 top-0 backdrop-blur items-center flex flex-col justify-center w-full h-full right-0 ">
+          <div className="px-3 w-full h-fit py-3 flex flex-col justify-center bg-white rounded-lg border ">
+            <div className=" flex items-center justify-between border-b py-2">
+              <div>
+                <h1 className=" text-md">MetaMask Modal</h1>
+              </div>
+
+              <button onClick={toggleSelected}>
+                <IoClose size="24" />
+              </button>
+            </div>
+
+            <div className=" flex flex-col gap-2 mt-4">
+              {/* Add MetaMask content here */}
+            </div>
+          </div>
+        </div>
+      )}
     </>
   );
 };

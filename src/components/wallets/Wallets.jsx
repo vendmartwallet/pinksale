@@ -1,10 +1,9 @@
 import React from "react";
 
 const Wallets = (props) => {
-  
   return (
     <>
-      <div className=" w-[50%] flex flex-col py-2 justify-center items-center border">
+      <div className=" flex flex-col py-2 justify-center items-center border">
         <div className=" w-12 h-12">
           <img src={props.img} alt="" />
         </div>
