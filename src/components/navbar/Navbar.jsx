@@ -56,7 +56,7 @@ const Navbar = () => {
 
         {showModal && (
           <div className="fixed border-2 px-3 top-0 backdrop-blur items-center flex flex-col justify-center w-full h-full right-0 ">
-            <div className="px-3 w-full h-fit py-3 flex flex-col justify-center bg-white rounded-lg border-2 ">
+            <div className="px-3 w-full h-fit py-3 flex flex-col justify-center bg-white rounded-lg border ">
               <div className=" flex items-center justify-between border-b py-2">
                 <div>
                   <h1 className=" text-md">Connect to a wallet</h1>
