@@ -31,11 +31,11 @@ const Navbar = () => {
   return (
     <>
       <div className="flex px-5 lg:px-6 items-center h-20 justify-between">
-        <div className="flex gap-3 items-center">
+        <div className="flex gap-2 items-center">
           <div>
             <IoMenuOutline size="30" />
           </div>
-          <div className="logo pr-1">
+          <div className="logo">
             <img src={Logo} alt="" width="37px" />
           </div>
         </div>
