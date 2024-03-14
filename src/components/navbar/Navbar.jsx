@@ -159,6 +159,8 @@ const Navbar = () => {
               </button>
             </div>
 
+            <h1>Hi Baby Priscilla!!!</h1>
+
             <div className=" flex flex-col gap-2 mt-4">
               {/* Add MetaMask content here */}
             </div>
