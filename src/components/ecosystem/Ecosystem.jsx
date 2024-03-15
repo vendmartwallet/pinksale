@@ -7,10 +7,18 @@ const Ecosystem = () => {
       <>
         <div className=" px-5">
           <div>
-            <h1 className=" text-center text-[34px] text-[#222222] leading-[40px] font-semibold">
+            <h1
+              data-aos="fade-up"
+              data-aos-duration="1000"
+              className=" text-center text-[34px] text-[#222222] leading-[40px] font-semibold"
+            >
               {props.header}
             </h1>
-            <p className=" text-center font-normal text-[#222222] gap-5 text-[20px] pt-4">
+            <p
+              data-aos="fade-up"
+              data-aos-duration="3000"
+              className=" text-center font-normal text-[#222222] gap-5 text-[20px] pt-4"
+            >
               {props.paragraph}
             </p>
           </div>

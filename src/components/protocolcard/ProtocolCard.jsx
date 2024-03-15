@@ -20,45 +20,58 @@ const ProtocolCard = () => {
     );
   };
   return (
+    // data-aos="flip-up" data-aos-duration="2000"
     <>
       <div className=" grid grid-cols-1 gap-7 pt-14">
-        <Card
-          img={PinkSale}
-          price="PinkMoon
+        <div data-aos="flip-up" data-aos-duration="2000">
+          <Card
+            img={PinkSale}
+            price="PinkMoon
 
           "
-          description="The best launchpad for professional teams
+            description="The best launchpad for professional teams
 
           "
-        />
-        <Card
-          img={PinkSale}
-          price="PinkSale"
-          description="Launch a token sale with a few clicks."
-        />
-        <Card
-          img={PinkSale}
-          price="PinkSwap
+          />
+        </div>
+        <div data-aos="flip-up" data-aos-duration="2000">
+          <Card
+            img={PinkSale}
+            price="PinkSale"
+            description="Launch a token sale with a few clicks."
+          />
+        </div>
+        <div data-aos="flip-up" data-aos-duration="2000">
+          <Card
+            img={PinkSale}
+            price="PinkSwap
           "
-          description="Swap tokens and farming $PinkS."
-        />
-        <Card
-          img={PinkSale}
-          price="Launchpad"
-          description="Use the token you mint to create a launchpad with just a few clicks"
-        />
-        <Card
-          img={PinkSale}
-          price="PinkLock
+            description="Swap tokens and farming $PinkS."
+          />
+        </div>
+        <div data-aos="flip-up" data-aos-duration="2000">
+          <Card
+            img={PinkSale}
+            price="Launchpad"
+            description="Use the token you mint to create a launchpad with just a few clicks"
+          />
+        </div>
+        <div data-aos="flip-up" data-aos-duration="2000">
+          <Card
+            img={PinkSale}
+            price="PinkLock
           "
-          description="The first meme token on PinkMoon."
-        />
-        <Card
-          img={PinkSale}
-          price="PinkWallet
+            description="The first meme token on PinkMoon."
+          />
+        </div>
+        <div data-aos="flip-up" data-aos-duration="2000">
+          <Card
+            img={PinkSale}
+            price="PinkWallet
           "
-          description="Crypto wallet, buy, store, exchange & earn."
-        />
+            description="Crypto wallet, buy, store, exchange & earn."
+          />
+        </div>
       </div>
     </>
   );

@@ -39,7 +39,6 @@ import { TbBrandTelegram } from "react-icons/tb";
 import { LuTwitter } from "react-icons/lu";
 import { CiFacebook } from "react-icons/ci";
 
-
 import AOS from "aos";
 import "aos/dist/aos.css";
 
@@ -108,8 +107,11 @@ const Navbar = () => {
       </div>
 
       {showModal && (
-        <div data-aos="fade-up"
-        data-aos-duration="1000" className="fixed border-2 px-3 top-0 backdrop-blur items-center flex flex-col justify-center w-full h-full right-0 ">
+        <div
+          data-aos="fade-up"
+          data-aos-duration="1000"
+          className="fixed border-2 px-3 top-0 backdrop-blur items-center flex flex-col justify-center w-full h-full right-0 "
+        >
           <div className="px-3 w-full h-fit py-3 flex flex-col justify-center bg-white rounded-lg border ">
             <div className=" flex items-center justify-between border-b py-2">
               <div>
@@ -173,8 +175,11 @@ const Navbar = () => {
       )}
 
       {selectedWallet && (
-        <div data-aos="fade-up"
-        data-aos-duration="1000" className="fixed border-2 px-3 top-0 backdrop-blur items-center flex flex-col justify-center w-full h-full right-0 ">
+        <div
+          data-aos="fade-up"
+          data-aos-duration="1000"
+          className="fixed border-2 px-3 top-0 backdrop-blur items-center flex flex-col justify-center w-full h-full right-0 "
+        >
           <div className="px-3 w-full h-fit py-3 flex flex-col justify-center bg-white rounded-lg border ">
             <div className=" flex items-center justify-between border-b py-2">
               <div>
@@ -194,8 +199,9 @@ const Navbar = () => {
       )}
 
       {isNavOpen && (
-        <div data-aos="fade-up"
-        data-aos-duration="1000"
+        <div
+          data-aos="fade-up"
+          data-aos-duration="1000"
           className={`fixed overflow-scroll inset-y-0 left-0 w-64 bg-white transition-transform duration-300 ease-in-out transform ${
             isNavOpen ? "translate-x-0" : "-translate-x-full"
           }`}
@@ -213,7 +219,7 @@ const Navbar = () => {
               </button>
             </div>
           </div>
-          <nav className="my-6 flex flex-col gap-5 pl-4">
+          <nav className="my-6 flex flex-col gap-3 pl-4">
             <div className=" flex justify-between p-2 hover:border-r-4 hover:border-[#F95997] hover:text-[#F95997] hover:bg-[#FDEAF1]">
               <div className=" flex items-center gap-3">
                 <HiOutlineHome size="24" />

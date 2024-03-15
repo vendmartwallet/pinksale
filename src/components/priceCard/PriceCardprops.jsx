@@ -16,10 +16,18 @@ const PriceCardprops = () => {
   return (
     <>
       <div className=" grid grid-cols-1 gap-7 pt-14">
-        <Card price="$27.4M" description="Total Liquidity Raised" />
-        <Card price="22568" description="Total Projects" />
-        <Card price="2.6M" description="Total Participants" />
-        <Card price="$77.1M" description="Total Values Locked" />
+        <div data-aos="fade-right" data-aos-duration="2000">
+          <Card price="$27.4M" description="Total Liquidity Raised" />
+        </div>
+        <div data-aos="fade-left" data-aos-duration="2000">
+          <Card price="22568" description="Total Projects" />
+        </div>
+        <div data-aos="fade-right" data-aos-duration="2000">
+          <Card price="2.6M" description="Total Participants" />
+        </div>
+        <div data-aos="fade-left" data-aos-duration="2000">
+          <Card price="$77.1M" description="Total Values Locked" />
+        </div>
       </div>
     </>
   );

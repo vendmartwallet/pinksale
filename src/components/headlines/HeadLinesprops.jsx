@@ -5,7 +5,8 @@ const HeadLinesprops = () => {
   const HeadLine = (props) => {
     return (
       <>
-        <div className=" px-5">
+        <div data-aos="fade-up"
+        data-aos-duration="1000" className=" px-5">
           <div>
             <h1 className=" text-center text-[38px] text-[#222222] leading-[50px] font-semibold">
               {props.header}
@@ -15,7 +16,8 @@ const HeadLinesprops = () => {
             </p>
           </div>
 
-          <div className=" grid grid-cols-1 gap-2 mt-5">
+          <div data-aos="fade-up"
+        data-aos-duration="2000" className=" grid grid-cols-1 gap-2 mt-5">
             <Doublebtn title="Create Now" />
             <Doublebtn title="Learn more" />
           </div>
