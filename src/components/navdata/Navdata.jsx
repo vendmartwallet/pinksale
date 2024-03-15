@@ -3,7 +3,7 @@ import React from "react";
 const Navdata = (props) => {
   return (
     <>
-      <div className=" text-lg font-light">{props.data}</div>
+      <div className=" text-md font-light">{props.data}</div>
     </>
   );
 };
