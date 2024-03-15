@@ -25,3 +25,28 @@
 .animate-float {
   animation: float 1.5s ease-in-out infinite;
 }
+
+
+.sidebar::-webkit-scrollbar {
+  width: 10px;
+}
+/* Width of the scrollbar */
+.scrollcontainer::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+.scrollcontainer::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+.scrollcontainer::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 5px;
+}
+
+/* Handle on hover */
+.scrollcontainer::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}

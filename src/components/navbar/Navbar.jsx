@@ -202,7 +202,7 @@ const Navbar = () => {
         <div
           data-aos="fade-up"
           data-aos-duration="1000"
-          className={`fixed lg:hidden overflow-scroll z-[99999] inset-y-0 left-0 w-64 bg-white transition-transform border-r duration-300 ease-in-out transform ${
+          className={`fixed sidebar lg:hidden overflow-scroll z-[99999] inset-y-0 left-0 w-64 bg-white transition-transform border-r duration-300 ease-in-out transform ${
             isNavOpen ? "translate-x-0" : "-translate-x-full"
           }`}
         >

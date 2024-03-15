@@ -25,11 +25,10 @@ const TrendingLists = () => {
   };
   return (
     <>
-      <div className=" flex gap-2 px-5 items-center overflow-scroll lg:overflow-hidden">
+      <div className="scrollcontainer  flex gap-2 px-5 items-center overflow-scroll lg:overflow-hidden">
         <div>
           <Trending img={Tradeview} trendheader="Trending" />
         </div>
-
         <div className=" flex gap-1 items-center">
           <Trending harsh="#1" title="MyroFloki" />
           <Trending harsh="#1" title="MyroFloki" />
