@@ -110,7 +110,7 @@ const Navbar = () => {
         <div
           data-aos="fade-up"
           data-aos-duration="1000"
-          className="fixed border-2 px-3 top-0 backdrop-blur items-center flex flex-col justify-center w-full h-full right-0 "
+          className="fixed z-[99999] border-2 px-3 top-0 backdrop-blur items-center flex flex-col justify-center w-full h-full right-0 "
         >
           <div className="px-3 w-full h-fit py-3 flex flex-col justify-center bg-white rounded-lg border ">
             <div className=" flex items-center justify-between border-b py-2">
@@ -178,7 +178,7 @@ const Navbar = () => {
         <div
           data-aos="fade-up"
           data-aos-duration="1000"
-          className="fixed border-2 px-3 top-0 backdrop-blur items-center flex flex-col justify-center w-full h-full right-0 "
+          className="fixed z-[99999] border-2 px-3 top-0 backdrop-blur items-center flex flex-col justify-center w-full h-full right-0 "
         >
           <div className="px-3 w-full h-fit py-3 flex flex-col justify-center bg-white rounded-lg border ">
             <div className=" flex items-center justify-between border-b py-2">
@@ -202,7 +202,7 @@ const Navbar = () => {
         <div
           data-aos="fade-up"
           data-aos-duration="1000"
-          className={`fixed overflow-scroll inset-y-0 left-0 w-64 bg-white transition-transform duration-300 ease-in-out transform ${
+          className={`fixed overflow-scroll backdrop-blur z-[99999] inset-y-0 left-0 w-64 bg-white transition-transform duration-300 ease-in-out transform ${
             isNavOpen ? "translate-x-0" : "-translate-x-full"
           }`}
         >
