@@ -28,7 +28,7 @@
 
 
 .sidebar::-webkit-scrollbar {
-  width: none;
+  width: 4px;
 }
 /* Width of the scrollbar */
 .scrollcontainer::-webkit-scrollbar {
