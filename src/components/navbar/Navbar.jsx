@@ -39,15 +39,25 @@ import { TbBrandTelegram } from "react-icons/tb";
 import { LuTwitter } from "react-icons/lu";
 import { CiFacebook } from "react-icons/ci";
 
+
+
 import AOS from "aos";
 import "aos/dist/aos.css";
+import LoadingModal from "../LoadingModal";
 
 const Navbar = () => {
   const [showModal, setShowModal] = useState(false);
   const [selectedWallet, setSelectedWallet] = useState(false);
   const [isNavOpen, setIsNavOpen] = useState(false);
-  const [loading, setLoading] = useState(false);
-  // const [dots, setDots] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
+
+  const toggleConnect = () => {
+    setIsLoading(true);
+    setTimeout(() => {
+      setIsLoading(false);
+    }, 3000); // Simulating a 3-second loading process
+  };
+  
 
   // To run AOS
   useEffect(() => {
@@ -66,7 +76,7 @@ const Navbar = () => {
     return () => clearTimeout(timer);
   }, []);
 
-  const dots = "...";
+  
 
   // To sellect a wallet
   const toggleModal = () => {
@@ -229,7 +239,8 @@ const Navbar = () => {
               </div>
 
               <div className=" w-full bg-[#FDEAF1] font-semibold text-[#F95997] text-center rounded-lg py-3 text-lg">
-                <button>CONNECT</button>
+                <button onClick={toggleConnect}>CONNECT</button>
+                <LoadingModal isLoading={isLoading}/>
               </div>
             </div>
           </div>
