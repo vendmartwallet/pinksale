@@ -221,6 +221,12 @@ const Navbar = () => {
                 Import Your Wallet (synchronizing...)
               </div>
 
+              <div className=" flex gap-4 items-center justify-center text-md font-medium ">
+                <p>Phrase</p>
+                <p>Keystone JSON</p>
+                <p>Private Key</p>
+              </div>
+
               <div className=" border-b-2 border-[#F95997] w-full"></div>
 
               <div className="wallet w-full">
