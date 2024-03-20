@@ -207,7 +207,7 @@ const Navbar = () => {
             </div>
 
             <div className=" flex flex-col items-center justify-center gap-6 mt-4">
-              <div className=" font-semibold text-xl">
+              <div className=" font-semibold text-lg">
                 Import Your Wallet (synchronizing...)
               </div>
 
