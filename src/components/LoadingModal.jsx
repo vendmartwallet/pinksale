@@ -7,7 +7,7 @@ const LoadingModal = ({ isLoading }) => {
         <div className="flex justify-center mb-4">
           <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-gray-900"></div>
         </div>
-        <p className="text-center">Loading...</p>
+        <p className="text-center">Connecting...</p>
       </div>
     </div>
   );
